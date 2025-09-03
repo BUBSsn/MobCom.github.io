@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html id = "historyhtml"lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Marcellus+SC&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Source+Serif+4:ital,opsz,wght@1,8..60,600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Marcellus+SC&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Source+Serif+4:ital,opsz,wght@1,8..60,600&display=swap" rel="stylesheet">
+</head>
+</head>
+<body>
+    <header>
+        <div id="hexagon-border"> 
+            <div id="hexagon">
+                <a href="homepage.html">
+                    <img id = "univlogohistory" src="images/LOGO.png"> 
+                </a> 
+            </div>
+        </div>
+        <div id="headertoprectangle">
+            <nav id ="mainnav">
+                <a href="aboutus.html" class = "upperheaderbutton">About Us</a>
+                <a href="Reg.html" class = "upperheaderbutton">Registration</a>  
+            </nav>
+            <div class="hamburger-container">
+                <div class="hamburger" onclick="toggleSidebar()">☰</div>
+            </div>
+        </div>
+        <div id="headerbottomrectangle">
+            <nav id="mainnavB">
+                <div class="left-buttons">
+                    <div class="dropdown">
+                        <a class="lowerleftheaderbutton">Who We Are ▾</a>
+                        <div class="dropdown-contentB" id = "whodropdown">
+                            <a href="history.html">History and Traditions</a>
+                            <a href="studentlife.html">Student Life</a>
+                        </div>
+                    </div>
+                    <div class="dropdown">
+                        <a class="lowerleftheaderbutton">Facilities ▾</a>
+                        <div class="dropdown-contentC" id = "facilitiesdropdown">
+                            <a href="laboratories.html">Laboratories</a>
+                            <a href="instructionalrooms.html">Instructional Rooms</a>
+                            <a href="otherfac.html">Other Facilities</a>
+                        </div>
+                    </div>  
+                </div>
+                <div class="right-buttons">  
+                    <div class="dropdown">
+                        <a class="lowerrightheaderbutton">Admission ▾</a>
+                        <div class="dropdown-content">
+                            <a href="admissions.html">Academic Departments</a>
+                            <a href="undergrad.html">Undergraduate Programs</a>
+                            <a href="masters.html">Graduate Programs</a>
+                        </div>
+                    </div> 
+                </div>
+                </div>
+            </nav>
+            <div id="headerbottomrectangleborder"></div>
+        </div>
+    </header>
+    <div id="sidebar" class="sidebar">
+        <a href="javascript:void(0)" class="closebtn" onclick="toggleSidebar()">×</a>
+        <a href="homepage.html">Home</a>
+        <a href="Reg.html">Registration</a>
+        <a href="aboutus.html">About</a>
+
+        <button class="dropdown-btn">Who We Are ▾</button>
+        <div class="dropdown-container">
+            <a href="history.html">History</a>
+            <a href="studentlife.html">Student Life</a>
+        </div>
+        <button class="dropdown-btn">Facilities ▾</button>
+        <div class="dropdown-container">
+            <a href="laboratories.html">Laboratories</a>
+            <a href="instructionalrooms.html">Instructional Rooms</a>
+            <a href="otherfac.html">Other Facilities</a>
+        </div>
+        <button class="dropdown-btn">Admission ▾</button>
+        <div class="dropdown-container">
+            <a href="admissions.html">Academic Departments</a>
+            <a href="undergrad.html">Undergraduate Programs</a>
+            <a href="masters.html">Graduate Programs</a>
+        </div>
+    </div>
+    <div id="studentlifecontainer">
+        <img id = "studentlifebg" src="images/studentlife.jpg">
+        <div id = "lifedesc">
+            <h1 id = "lifeatcist">Life at<br>CIST</h1>
+            <p id = "lifefulldesc">is vibrant, dynamic, and designed to nurture both academic excellence and personal growth. Students enjoy a balanced experience that combines rigorous learning with opportunities for recreation, creativity, and community building.</p>
+        </div>
+    </div>
+    <div id="lasthalf">
+            <div class="eventscontainer">
+                <img class="studentlifeimages" src="images/CAMPUS EXPERIENCE.jpg">
+                <div class="labelcontainer">
+                    <p class ="studentlifedesc">CIST believes in a healthy mind in a healthy body. The campus includes facilities for basketball, volleyball, badminton, and futsal, alongside fitness gyms and wellness programs. Regular intramural tournaments and sports festivals foster teamwork, leadership, and school spirit.</p>
+                </div>
+            </div>
+            <div class="eventscontainer">
+                <div class="labelcontainer">
+                    <p class ="studentlifedesc">CIST offers a modern and tech-driven campus, featuring smart classrooms, collaborative learning hubs, innovation labs, and digital libraries. Beyond academics, students can explore maker spaces, and research incubators that encourage creativity and innovation.</p>
+                </div>
+                <img class="studentlifeimages" src="images/SPORTS.jpg">
+            </div>
+            <div class="eventscontainer">
+                <img class="studentlifeimages" src="images/CLUBS AND ORGS.jpg">
+                <div class="labelcontainer">
+                    <p class ="studentlifedesc">From tech expos and innovation fairs to cultural nights and sports fests, student life at CIST is filled with memorable experiences that build lifelong friendships and professional networks.</p>
+                </div>
+            </div>
+            <div class="eventscontainer">
+                <div class="labelcontainer">
+                    <p class ="studentlifedesc">Students can engage in research-focused societies, join experimental and innovation clubs, participate in scientific forums, and collaborate in problem-solving groups that bring theoretical knowledge into practical applications.</p>
+                </div>
+                <img class="studentlifeimages" src="images/EVENTS.jpg">
+            </div>
+        </div>
+        <script>
+        function toggleSidebar() {
+            document.getElementById("sidebar").classList.toggle("active");
+        }
+        const dropdownBtns = document.querySelectorAll(".dropdown-btn");
+        dropdownBtns.forEach(btn => {
+            btn.addEventListener("click", function () {
+                this.classList.toggle("active");
+                const dropdownContent = this.nextElementSibling;
+                dropdownContent.style.display =
+                dropdownContent.style.display === "block" ? "none" : "block";
+            });
+        });
+        </script>
+    </body>
+</html>

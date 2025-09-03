@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CIST Registration</title>
+  <link rel="stylesheet" href="Reg.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <span href="Reg.html" class="reg-text">Registration</span>
+    <div class="search-box">
+      <input type="text" placeholder="Search...">
+      <button><img src="https://cdn-icons-png.flaticon.com/512/622/622669.png" alt="Search"></button>
+    </div>
+    <!-- Hamburger Icon (hidden by default) -->
+    <div class="hamburger" onclick="toggleSidebar()">☰</div>
+  </div>
+
+  <!-- Second Layer -->
+  <div class="nav-layer">
+    <div class="breadcrumb">
+      <a href="homepage.html"><i class="fa-solid fa-house"></i></a> > <a href="qr.html">My ID Ref</a> 
+    </div>
+
+    <!-- Hexagon -->
+    <div class="hex-border">
+      <div class="hex">
+        <img src="images/LOGO.png" alt="Logo">
+      </div>
+    </div>
+  </div>
+
+  <!-- Sidebar Navigation (mobile only) -->
+  <div id="sidebar" class="sidebar">
+    <a href="javascript:void(0)" class="closebtn" onclick="toggleSidebar()">×</a>
+    <a href="homepage.html">Home</a>
+    <a href="Reg.html">Registration</a>
+    <a href="aboutus.html">About</a>
+  </div>
+<main class="id-card">
+  <!-- FRONT SIDE -->
+  <div class="id-front">
+  <img src="images/id-front.png" alt="ID Front" class="id-image">
+  <div class="id-details">
+    <h2 id="name"></h2>
+    <p id="email"></p>
+    <p id="phone"></p>
+  </div>
+</div>
+
+  <!-- BACK SIDE -->
+  <div class="id-back">
+    <img src="images/id-back.png" alt="ID Back" class="id-image">
+  </div>
+</main>
+<button onclick="logout()">Logout</button>
+
+<script>
+  function logout() {
+    localStorage.setItem("loggedIn", "false");
+    window.location.href = "reg.html";
+  }
+</script>
+
+<script>
+const userData = JSON.parse(localStorage.getItem('userData'));
+if (userData) {
+  document.getElementById('name').innerText = `${userData.firstName} ${userData.middleName} ${userData.lastName}`;
+  document.getElementById('email').innerText = `${userData.email}`;
+  document.getElementById('phone').innerText = `${userData.phone}`;
+} else {
+  alert("No registration data found!");
+  window.location.href = "reg.html";
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CIST | Doctoral Degrees</title>
+  <link rel="stylesheet" href="Reg.css">
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+       <header>
+        <div id="hexagon-border"> 
+            <div id="hexagon">
+                <a href="homepage.html">
+                    <img id = "univlogohistory" src="images/LOGO.png"> 
+                </a> 
+            </div>
+        </div>
+        <div id="headertoprectangle">
+            <nav id ="mainnav">
+                <a href="aboutus.html" class = "upperheaderbutton">About Us</a>
+                <a href="Reg.html" class = "upperheaderbutton">Registration</a>  
+            </nav>
+        </div>
+        <div id="headerbottomrectangle">
+            <nav id="mainnavB">
+                <div class="left-buttons">
+                    <div class="dropdown">
+                        <a class="lowerleftheaderbutton">Who We Are ▾</a>
+                        <div class="dropdown-contentB" id = "whodropdown">
+                            <a href="history.html">History and Traditions</a>
+                            <a href="studentlife.html">Student Life</a>
+                        </div>
+                    </div>
+                    <div class="dropdown">
+                        <a class="lowerleftheaderbutton">Facilities ▾</a>
+                        <div class="dropdown-contentC" id = "facilitiesdropdown">
+                            <a href="laboratories.html">Laboratories</a>
+                            <a href="instructionalrooms.html">Instructional Rooms</a>
+                            <a href="otherfac.html">Other Facilities</a>
+                        </div>
+                    </div>  
+                </div>
+                <div class="right-buttons">  
+                    <div class="dropdown">
+                        <a class="lowerrightheaderbutton">Admission ▾</a>
+                        <div class="dropdown-content">
+                             <a href="admissions.html">Academic Departments</a>
+                            <a href="undergrad.html">Undergraduate Programs</a>
+                            <a href="masters.html">Graduate Programs</a>
+                        </div>
+                    </div> 
+                </div>
+                </div>
+            </nav>
+            <div id="headerbottomrectangleborder"></div>
+        </div>
+    </header>
+    <div id="sidebar" class="sidebar">
+        <a href="javascript:void(0)" class="closebtn" onclick="toggleSidebar()">×</a>
+        <a href="homepage.html">Home</a>
+        <a href="Reg.html">Registration</a>
+        <a href="aboutus.html">About</a>
+
+        <button class="dropdown-btn">Who We Are ▾</button>
+        <div class="dropdown-container">
+            <a href="history.html">History</a>
+            <a href="studentlife.html">Student Life</a>
+        </div>
+        <button class="dropdown-btn">Facilities ▾</button>
+        <div class="dropdown-container">
+            <a href="laboratories.html">Laboratories</a>
+            <a href="instructionalrooms.html">Instructional Rooms</a>
+            <a href="otherfac.html">Other Facilities</a>
+        </div>
+        <button class="dropdown-btn">Admission ▾</button>
+        <div class="dropdown-container">
+            <a href="admissions.html">Academic Departments</a>
+            <a href="undergrad.html">Undergraduate Programs</a>
+            <a href="masters.html">Graduate Programs</a>
+        </div>
+    </div> 
+  <!-- Hero Section -->
+     <div class="hero-ug">
+     </div> 
+  <div class="hero-ug">
+    <div class="page-heading">
+      <h2>Doctoral Degrees</h2>
+      <img src="images/foxgrey.png" alt="Fox Logo" class="fox">
+    </div>
+    <hr>
+  </div>
+
+  <!-- Main Section -->
+<section class="main-layout-ug">
+  <!-- Sidebar -->
+  <aside class="sidebar-left">
+    <ul>
+      <li><a href="undergrad.html">Undergraduate Programs ></a></li>
+      <li>
+        <a>Graduate Programs ></a>
+        <ul class="sub-links">
+          <li ><a href="masters.html">Master’s Degree</a></li>
+          <li class="active"><a href="doctoral.html">Doctoral Degree</a></li>
+        </ul>
+      </li>
+    </ul>
+  </aside>
+
+  <!-- Right Content -->
+  <div class="content-right">
+    <!-- Top heading section -->
+    
+
+    <!-- Table -->
+    <table class="program-table">
+      <tr><th>Program</th><th>Degree</th></tr>
+      <tr><td>Applied Mathematics</td><td>PhD</td></tr>
+      <tr><td>Biochemistry</td><td>PhD</td></tr>
+      <tr><td>Biology</td><td>PhD</td></tr>
+      <tr><td>Biotechnology</td><td>PhD</td></tr>
+      <tr><td>Chemistry</td><td>PhD</td></tr>
+      <tr><td>Computational Sciences</td><td>PhD</td></tr>
+      <tr><td>Computer Science</td><td>PhD</td></tr>
+      <tr><td>Data Science</td><td>PhD</td></tr>
+      <tr><td>Environmental Science</td><td>PhD</td></tr>
+      <tr><td>Forensic Science</td><td>PhD</td></tr>
+      <tr><td>Information Technology</td><td>PhD</td></tr>
+      <tr><td>Mathematics</td><td>PhD</td></tr>
+      <tr><td>Physics</td><td>PhD</td></tr>
+      <tr><td>Statistics</td><td>PhD</td></tr>
+    </table>
+  </div>
+</section>
+<script>
+        function toggleSidebar() {
+            document.getElementById("sidebar").classList.toggle("active");
+        }
+        const dropdownBtns = document.querySelectorAll(".dropdown-btn");
+        dropdownBtns.forEach(btn => {
+            btn.addEventListener("click", function () {
+                this.classList.toggle("active");
+                const dropdownContent = this.nextElementSibling;
+                dropdownContent.style.display =
+                dropdownContent.style.display === "block" ? "none" : "block";
+            });
+        });
+</script>
+
+</body>
+</html>

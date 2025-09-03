@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CIST Registration</title>
+  <link rel="stylesheet" href="Reg.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <span class="reg-text">Registration</span>
+    <div class="search-box">
+      <input type="text" placeholder="Search...">
+      <button><img src="https://cdn-icons-png.flaticon.com/512/622/622669.png" alt="Search"></button>
+    </div>
+    <!-- Hamburger Icon (hidden by default) -->
+    <div class="hamburger" onclick="toggleSidebar()">☰</div>
+  </div>
+
+  <!-- Second Layer -->
+  <div class="nav-layer">
+    <div class="breadcrumb">
+      <a href="homepage.html"><i class="fa-solid fa-house"></i></a> > <span class="reg-text">QR CODE</span>
+    </div>
+
+    <!-- Hexagon -->
+    <div class="hex-border">
+      <div class="hex">
+        <img src="images/LOGO.png" alt="Logo">
+      </div>
+    </div>
+  </div>
+
+  <!-- Sidebar Navigation (mobile only) -->
+  <div id="sidebar" class="sidebar">
+    <a href="javascript:void(0)" class="closebtn" onclick="toggleSidebar()">×</a>
+    <a href="homepage.html">Home</a>
+    <a href="Reg.html">Registration</a>
+    <a href="aboutus.html">About</a>
+  </div>
+
+<div class="qr-container" style="text-align:center; margin-top: 50px;">
+  <h2>My QR Code</h2>
+  <canvas id="qrcode"></canvas>
+  <p>
+    <a id="qrLink" href="my-id.html" style="display:block; margin-top: 10px; font-size: 16px; color: blue; text-decoration: underline;">
+      View My Digital ID
+    </a>
+  </p>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+<script>
+const qrTarget = window.location.origin + "/my-id.html";
+QRCode.toCanvas(document.getElementById('qrcode'), qrTarget, function (error) {
+  if (error) console.error(error);
+});
+
+document.getElementById('qrLink').href = qrTarget;
+</script>
+
+</body>
+</html>
