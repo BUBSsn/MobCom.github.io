@@ -14,7 +14,4 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  function logout(){
-    localStorage.removeItem("loggedInUser");
-    window.location.href = "reg.html";
-  }
+ 

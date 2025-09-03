@@ -18,37 +18,20 @@ function showRegister() {
   document.getElementById("registerSection").style.display = "block";
 }
 
-// ✅ Registration
-// Registration
-document.getElementById('registrationForm')?.addEventListener('submit', function(event) {
+
+document.getElementById('loginForm').addEventListener('submit', function(event) {
   event.preventDefault();
 
-  const userData = {
-    firstName: document.getElementById('firstName').value,
-    middleName: document.getElementById('middleName').value,
-    lastName: document.getElementById('lastName').value,
-    email: document.getElementById('email').value,
-    phone: document.getElementById('phone').value,
-    password: document.getElementById('password').value // ✅ store password
-  };
-
-  localStorage.setItem('userData', JSON.stringify(userData));
-  localStorage.setItem("loggedIn", "true");
-
-  alert("Registration successful! Redirecting to ID.");
-  window.location.href = "my-id.html"; // ✅ go to correct page
-});
-
-// Login
-document.getElementById('loginForm')?.addEventListener('submit', function(event) {
-  event.preventDefault();
-
-  const savedUser = JSON.parse(localStorage.getItem('userData'));
+  const users = JSON.parse(localStorage.getItem('users')) || [];
   const loginEmail = document.getElementById('loginEmail').value;
   const loginPassword = document.getElementById('loginPassword').value;
 
-  if (savedUser && savedUser.email === loginEmail && savedUser.password === loginPassword) {
+  // Find user with matching email and password
+  const foundUser = users.find(user => user.email === loginEmail && user.password === loginPassword);
+
+  if (foundUser) {
     localStorage.setItem("loggedIn", "true");
+    localStorage.setItem("userData", JSON.stringify(foundUser)); 
     alert("Login successful!");
     window.location.href = "my-id.html";
   } else {

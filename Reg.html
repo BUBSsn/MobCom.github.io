@@ -172,16 +172,30 @@
     
   document.getElementById('registrationForm').addEventListener('submit', function(event) {
   event.preventDefault();
+  
+  const users = JSON.parse(localStorage.getItem('users')) || [];
+
+  const newEmail = document.getElementById('email').value;
+  const emailExists = users.some(user => user.email === newEmail);
+
+  if (emailExists) {
+    alert("This email is already registered. Please use a different email.");
+    return;
+  }
 
   const userData = {
     firstName: document.getElementById('firstName').value,
     middleName: document.getElementById('middleName').value,
     lastName: document.getElementById('lastName').value,
-    email: document.getElementById('email').value,
-    phone: document.getElementById('phone').value
+    email: newEmail,
+    phone: document.getElementById('phone').value,
+    password: document.getElementById('password').value
   };
 
-  localStorage.setItem('userData', JSON.stringify(userData));
+  users.push(userData);
+  localStorage.setItem('users', JSON.stringify(users));
+  localStorage.setItem("loggedIn", "true");
+  localStorage.setItem("userData", JSON.stringify(userData));
   alert("Registration saved! You can now view your ID.");
   window.location.href = "qr.html";
 });

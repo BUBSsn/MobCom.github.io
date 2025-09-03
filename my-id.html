@@ -56,7 +56,7 @@
     <img src="images/id-back.png" alt="ID Back" class="id-image">
   </div>
 </main>
-<button onclick="logout()">Logout</button>
+<button class="logout-btn" onclick="logout()">Logout</button>
 
 <script>
   function logout() {
@@ -67,13 +67,15 @@
 
 <script>
 const userData = JSON.parse(localStorage.getItem('userData'));
-if (userData) {
+const isLoggedIn = localStorage.getItem('loggedIn') === "true";
+
+if (userData && isLoggedIn) {
   document.getElementById('name').innerText = `${userData.firstName} ${userData.middleName} ${userData.lastName}`;
   document.getElementById('email').innerText = `${userData.email}`;
   document.getElementById('phone').innerText = `${userData.phone}`;
 } else {
-  alert("No registration data found!");
-  window.location.href = "reg.html";
+  alert("Please log in to view your ID.");
+  window.location.href = "reg.html"; 
 }
 </script>
 
