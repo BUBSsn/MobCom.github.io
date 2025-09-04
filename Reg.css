@@ -25,6 +25,40 @@
   font-family: 'Poppins';
 }
 
+.dropdown-btn {
+  padding: 10px 20px;
+  text-decoration: none;
+  font-size: 18px;
+  color: #f39c12;
+  background: none;
+  border: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  outline: none;
+  transition: 0.3s;
+}
+
+.dropdown-btn:hover {
+  background: #0d172b;
+}
+
+.dropdown-container {
+  display: none;
+  background-color: #0d172b;
+  padding-left: 20px;
+}
+
+.dropdown-container a {
+  padding: 8px 20px;
+  font-size: 16px;
+  display: block;
+  color: #f39c12;
+}
+
+.dropdown-container a:hover {
+  background: #09101e;
+}
 
 body {
   background: #fff;
@@ -78,11 +112,32 @@ body {
 
 /* Hamburger hidden by default */
 .hamburger {
-  display: none;
-  font-size: 26px;
-  cursor: pointer;
+    position: absolute;
+    right: 5%;
+    width: fit-content;
+    display: none;
+    font-size: 26px;
+    cursor: pointer;
+    color: chocolate;
 }
 
+#mainnav {
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;   
+    justify-content: flex-start;
+    padding-right: 2rem;
+    gap: 5rem;
+}
+
+.hamburger-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
 /* Second layer with hex */
 .nav-layer {
     background: #ffffe4;
@@ -98,8 +153,23 @@ body {
 }
 
 .breadcrumb {
-  font-size: 20px;
+  position: relative;
+  transform: translateY(-50%);
+  top: 50%;
+  left: 4%;
+  font-size: 25px;
   font-weight: 100;
+}
+
+header {
+    position: fixed; 
+    top: 0; 
+    width: 100%; 
+    height: 15vh; 
+    z-index: 999;
+    display: flex;             
+    align-items: center;       
+    justify-content: center;
 }
 
 .breadcrumb a {
@@ -159,6 +229,90 @@ body {
   color: #333;
 }
 
+#hexagon-border {
+    width: 22%;
+    height: 125%;
+    clip-path: polygon(
+        25% 0%,
+        75% 0%,
+        100% 50%,
+        75% 100%,
+        25% 100%,
+        0% 50%
+    );
+    background: rgb(232, 232, 212);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+}
+#headerbottomrectangleborder {
+    width: 100%;
+    height: 10%;
+    background: rgb(232, 232, 212);
+    bottom: 0;
+    position: absolute;
+}
+#hexagon {
+    position: relative;
+    width: 97%;
+    height: 95%;
+    clip-path: polygon(
+        25% 0%,
+        75% 0%,
+        100% 50%,
+        75% 100%,
+        25% 100%,
+        0% 50%
+    );
+    background: rgb(255, 255, 228);
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.upperheaderbutton {
+    position: relative;
+    left: 5%;
+    padding: 4px 10px;
+    color: white;
+    text-decoration: none;
+    border-radius: 1px;
+    font-weight: bold;
+    font-size: x-large;
+    transition: background 0.3s ease;
+}
+
+#univlogo {
+    position: relative;
+    transform: translateY(3%);
+    width: 85%;
+    object-fit: cover;
+}
+
+#univlogohistory {
+    position: relative;
+    transform: translate(9%,4.5%);
+    width: 85%;
+    object-fit: cover;
+}
+
+#headertoprectangle {
+    width: 100%;
+    height: 50%;
+    background-color: rgb(24, 43, 68);
+    position: absolute;
+    top: 0;
+}
+#headerbottomrectangle {
+    width: 100%;
+    height: 50%;
+    background-color: rgb(255, 255, 228);
+    position: absolute;
+    bottom: 0;
+}
+
 /* Sidebar */
 .sidebar {
   height: 100%;
@@ -200,6 +354,10 @@ body {
 
 /* Form Section */
 .form-container {
+  position: relative;
+  transform: translateX(-50%);
+  left: 50%;
+  top: 15vh;
   padding: 30px 20px;
   max-width: 600px;
 }
@@ -255,6 +413,8 @@ form button:hover {
 
 /* Footer orange line */
 footer {
+  position: relative;
+  top: 15vh;
   height: 50px;
   background: #e67e22;
   margin-top: 50px;
